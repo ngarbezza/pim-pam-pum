@@ -29,18 +29,11 @@ module.exports = function(environment) {
       'connect-src': "'self' http://localhost:3000"
     };
 
-    //ENV['simple-auth'] = {
-    //  authorizer: 'simple-auth-authorizer:token'
-    //};
-
     ENV['simple-auth-token'] = {
       serverTokenEndpoint: 'http://localhost:3000/api/sessions',
       identificationField: 'email',
       passwordField: 'password',
-      tokenPropertyName: 'auth_token',
-      authorizationPrefix: 'Bearer ',
-      authorizationHeaderName: 'Authorization',
-      headers: {},
+      tokenPropertyName: 'auth_token'
     };
   }
 
