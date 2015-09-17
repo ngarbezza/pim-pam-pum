@@ -7,7 +7,7 @@ export default Ember.Controller.extend({
         authenticator = 'simple-auth-authenticator:token';
 
       var self = this;
-      this.get('session').authenticate(authenticator, credentials).then(function (value) {
+      this.get('session').authenticate(authenticator, credentials).then(function () {
         self.transitionToRoute('eventos');
       }, function (reason) {
         console.log(reason);
