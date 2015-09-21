@@ -10,6 +10,7 @@ export default Ember.Controller.extend({
       this.get('session').authenticate(authenticator, credentials).then(function () {
         self.transitionToRoute('eventos');
       }, function (reason) {
+        console.log('failed login request');
         console.log(reason);
       });
     }
