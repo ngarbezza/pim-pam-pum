@@ -34,10 +34,7 @@ export default TokenAuthenticator.extend({
       dataType: 'json',
       contentType: 'application/json',
       beforeSend: function(xhr, settings) {
-        var parsed_session = JSON.parse(localStorage['ember_simple_auth:session']);
         xhr.setRequestHeader('Accept', settings.accepts.json);
-        xhr.setRequestHeader('X-User-Email', parsed_session['secure']['user_email']);
-        xhr.setRequestHeader('X-Auth-Token', parsed_session['secure']['auth_token']);
       },
       headers: this.headers
     });

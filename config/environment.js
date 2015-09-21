@@ -29,6 +29,12 @@ module.exports = function(environment) {
       'connect-src': "'self' http://localhost:3000"
     };
 
+    ENV['simple-auth'] = {
+      authenticator: 'authenticator:pimpampum',
+      authorizer: 'authorizer:pimpampum',
+      crossOriginWhitelist: ['http://localhost:3000']
+    };
+
     ENV['simple-auth-token'] = {
       serverTokenEndpoint: 'http://localhost:3000/api/sessions',
       identificationField: 'email',
