@@ -27,7 +27,20 @@ module.exports = function(environment) {
     // ENV.APP.LOG_VIEW_LOOKUPS = true;
     ENV.contentSecurityPolicy = {
       'connect-src': "'self' http://localhost:3000"
-    }
+    };
+
+    ENV['simple-auth'] = {
+      authenticator: 'authenticator:pimpampum',
+      authorizer: 'authorizer:pimpampum',
+      crossOriginWhitelist: ['http://localhost:3000']
+    };
+
+    ENV['simple-auth-token'] = {
+      serverTokenEndpoint: 'http://localhost:3000/api/sessions',
+      identificationField: 'email',
+      passwordField: 'password',
+      tokenPropertyName: 'auth_token'
+    };
   }
 
   if (environment === 'test') {
