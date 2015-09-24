@@ -50,6 +50,7 @@ module.exports = function(environment) {
     'connect-src': "'self' " + ENV.APP.hostName
   };
 
+  //
   ENV['simple-auth'] = {
     authenticator: 'authenticator:pimpampum',
     authorizer: 'authorizer:pimpampum',
