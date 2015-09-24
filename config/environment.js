@@ -25,22 +25,8 @@ module.exports = function(environment) {
     // ENV.APP.LOG_TRANSITIONS = true;
     // ENV.APP.LOG_TRANSITIONS_INTERNAL = true;
     // ENV.APP.LOG_VIEW_LOOKUPS = true;
-    ENV.contentSecurityPolicy = {
-      'connect-src': "'self' http://localhost:3000"
-    };
 
-    ENV['simple-auth'] = {
-      authenticator: 'authenticator:pimpampum',
-      authorizer: 'authorizer:pimpampum',
-      crossOriginWhitelist: ['http://localhost:3000']
-    };
-
-    ENV['simple-auth-token'] = {
-      serverTokenEndpoint: 'http://localhost:3000/api/sessions',
-      identificationField: 'email',
-      passwordField: 'password',
-      tokenPropertyName: 'auth_token'
-    };
+    ENV.APP.hostName = 'http://localhost:3000';
   }
 
   if (environment === 'test') {
@@ -56,8 +42,26 @@ module.exports = function(environment) {
   }
 
   if (environment === 'production') {
-
+    ENV.APP.hostName = 'http://pim-pam-pum-backend.herokuapp.com';
   }
+
+  // cross-origin
+  ENV.contentSecurityPolicy = {
+    'connect-src': "'self' " + ENV.APP.hostName
+  };
+
+  ENV['simple-auth'] = {
+    authenticator: 'authenticator:pimpampum',
+    authorizer: 'authorizer:pimpampum',
+    crossOriginWhitelist: [ENV.APP.hostName]
+  };
+
+  ENV['simple-auth-token'] = {
+    serverTokenEndpoint: ENV.APP.hostName + '/api/sessions',
+    identificationField: 'email',
+    passwordField: 'password',
+    tokenPropertyName: 'auth_token'
+  };
 
   return ENV;
 };
