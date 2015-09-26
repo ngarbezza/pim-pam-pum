@@ -5,18 +5,32 @@ export default Ember.Controller.extend(EmberValidations, {
 
   validations: {
     userEmail: {
-      presence: true,
+      presence: {
+        message: 'ingrese el e-mail'
+      },
       format: {
         with: /^[\w+\-.]+@[a-z\d\-.]+\.[a-z]+$/i,
         message: 'debe ser una dirección de e-mail válida'
       }
     },
     userPassword: {
-      presence: true,
-      length: {minimum: 8}
+      presence: {
+        message: 'ingrese la contraseña'
+      },
+      length: {
+        minimum: 8,
+        messages: {
+          tooShort: 'debe contener como mínimo 8 caracteres'
+        }
+      },
+      confirmation: {
+        message: 'deben coincidir las contraseñas'
+      }
     },
     userPasswordConfirmation: {
-      presence: true
+      presence: {
+        message: 'ingrese la contraseña'
+      }
     }
   },
 
