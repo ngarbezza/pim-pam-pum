@@ -6,7 +6,10 @@ module.exports = function(environment) {
     environment: environment,
     baseURL: '/',
     locationType: 'auto',
+
+    //este export es para poder acceder a las variables globales en produccion.
     exportApplicationGlobal: true,
+
     EmberENV: {
       FEATURES: {
         // Here you can enable experimental features on an ember canary build
