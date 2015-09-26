@@ -1,12 +1,9 @@
 <form {{action 'createUser' on="submit"}}>
-  {{input type="text" value=userEmail placeholder="Email"}}
-  {{errors.email}}
+  {{validated-input type="text" value=userEmail placeholder="Email"  errors=errors.userEmail}}
 
-  {{input type="password" value=userPassword placeholder="Contraseña"}}
-  {{errors.password}}
+  {{validated-input type="password" value=userPassword placeholder="Contraseña"  errors=errors.userPassword}}
 
-  {{input type="password" value=userPasswordConfirmation placeholder="Confirmación"}}
-  {{errors.passwordConfirmation}}
+  {{validated-input type="password" value=userPasswordConfirmation placeholder="Confirmación" errors=errors.userPasswordConfirmation}}
 
   <button type="submit">Registrarme</button>
 </form>

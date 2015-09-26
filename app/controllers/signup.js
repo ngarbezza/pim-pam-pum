@@ -2,21 +2,22 @@ import Ember from 'ember';
 import EmberValidations from 'ember-validations';
 
 export default Ember.Controller.extend(EmberValidations, {
-  errors: [],
 
   validations: {
-    email: {
+    userEmail: {
       presence: true,
       format: {
         with: /^[\w+\-.]+@[a-z\d\-.]+\.[a-z]+$/i,
         message: 'debe ser una dirección de e-mail válida'
       }
     },
-    password: {
+    userPassword: {
       presence: true,
       length: {minimum: 8}
     },
-    passwordConfirmation: true
+    userPasswordConfirmation: {
+      presence: true
+    }
   },
 
   actions: {
