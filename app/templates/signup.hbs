@@ -1,9 +1,15 @@
+{{#link-to 'login'}}Volver{{/link-to}}
+
+
 <form {{action 'createUser' on="submit"}}>
   {{validated-input type="text" value=userEmail placeholder="Email"  errors=errors.userEmail}}
 
   {{validated-input type="password" value=userPassword placeholder="Contraseña"  errors=errors.userPassword}}
 
   {{validated-input type="password" value=userPasswordConfirmation placeholder="Confirmación" errors=errors.userPasswordConfirmation}}
+
+
+  {{#each model.errors.email as |error|}} <div class="error"> {{error.message}} </div> {{/each}}
 
   <button type="submit">Registrarme</button>
 </form>
