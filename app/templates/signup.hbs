@@ -11,5 +11,5 @@
 
   {{#each model.errors.email as |error|}} <div class="error"> {{error.message}} </div> {{/each}}
 
-  <button type="submit">Registrarme</button>
+  <button type="submit" {{bind-attr disabled="isInvalid"}}>Registrarme</button>
 </form>
