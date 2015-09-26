@@ -2,8 +2,13 @@
 
 <form {{action 'authenticate' on='submit'}}>
     <label for="identification">Login</label>
-  {{input id='identification' placeholder='Enter Login' value=identification}}
+
+
+  {{validated-input type="text" value=identification placeholder="Ingrese Email"  errors=errors.identification}}
+
     <label for="password">Password</label>
-  {{input id='password' placeholder='Enter Password' type='password' value=password}}
+
+  {{validated-input type="password" value=password placeholder="Ingrese Contraseña"  errors=errors.password}}
+
     <button type="submit">Login</button>
 </form>
