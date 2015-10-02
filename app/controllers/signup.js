@@ -43,10 +43,10 @@ export default Ember.Controller.extend(EmberValidations, {
         email: email,
         password: password
       });
-      this.set('model', user)
+      this.set('model', user);
 
       user.save();
-      if(user.errors == undefined){
+      if(user.errors === undefined){
         this.transitionToRoute('login');
       }
     }

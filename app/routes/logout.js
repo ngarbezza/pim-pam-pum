@@ -8,6 +8,6 @@ export default Ember.Route.extend({
     }, function (reason) {
       console.log('failed logout request');
       console.log(reason);
-    })
+    });
   }
 });

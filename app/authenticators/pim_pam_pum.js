@@ -1,4 +1,5 @@
 import TokenAuthenticator from 'simple-auth-token/authenticators/token';
+import Ember from 'ember';
 
 export default TokenAuthenticator.extend({
 
@@ -11,7 +12,7 @@ export default TokenAuthenticator.extend({
     return authenticationRoot;
   },
 
-  invalidate: function(data) {
+  invalidate: function() {
     var self = this;
     return new Ember.RSVP.Promise(function(resolve, reject) {
       self.makeLogoutRequest().then(function(response) {
