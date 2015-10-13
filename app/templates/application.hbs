@@ -1,9 +1,7 @@
-<h2 id="title">Pim-Pam-Pum</h2>
-<h3 id="subTitle">¡¡Tu evento en tres pasos!!</h3>
 
+{{render 'header-nav'}}
 
-{{#if session.isAuthenticated}}
-  {{#link-to 'logout'}}Salir{{/link-to}}
-{{/if}}
-
-{{outlet}}
+<div class="container">
+    <h2 class="text-center">Pim-Pam-Pum <small>¡¡Tu evento en tres pasos!!</small></h2>
+  {{outlet}}
+</div>

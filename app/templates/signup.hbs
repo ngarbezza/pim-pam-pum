@@ -1,15 +1,18 @@
-{{#link-to 'login'}}Volver{{/link-to}}
+<form class="form" {{action 'createUser' on="submit"}}>
+    <hr/>
+    <label for="identification" >Email de usuario</label>
 
-
-<form {{action 'createUser' on="submit"}}>
   {{validated-input type="text" value=userEmail placeholder="Email"  errors=errors.userEmail}}
-
+    <br/>
+    <label for="password" >Contraseña</label>
   {{validated-input type="password" value=userPassword placeholder="Contraseña"  errors=errors.userPassword}}
-
+    <br/>
+    <label for="password" >Repita contraseña</label>
   {{validated-input type="password" value=userPasswordConfirmation placeholder="Confirmación" errors=errors.userPasswordConfirmation}}
 
 
   {{#each model.errors.email as |error|}} <div class="error"> {{error.message}} </div> {{/each}}
-
-  <button type="submit" {{bind-attr disabled="isInvalid"}}>Registrarme</button>
+    <hr/>
+  <button type="submit" {{bind-attr disabled="isInvalid"}} class="btn btn-md btn-primary">
+      <i class="icon-user-add icon-white"></i>Registrarme</button>
 </form>
