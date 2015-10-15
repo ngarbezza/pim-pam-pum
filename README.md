@@ -1,3 +1,4 @@
+[![Stories in Ready](https://badge.waffle.io/ngarbezza/pim-pam-pum.png?label=ready&title=Ready)](https://waffle.io/ngarbezza/pim-pam-pum)
 # Pim-pam-pum
 
 This README outlines the details of collaborating on this Ember application.
