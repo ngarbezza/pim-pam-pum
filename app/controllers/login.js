@@ -32,10 +32,10 @@ export default Ember.Controller.extend(EmberValidations, {
 
       var self = this;
       this.get('session').authenticate(authenticator, credentials).then(function () {
-          self.transitionToRoute('eventos');
+        self.set('loginErrors', false);
+        self.transitionToRoute('eventos');
       }, function (reason) {
-        console.log('failed login request');
-        console.log(reason);
+        self.set('loginErrors', true);
       });
     }
   }
