@@ -45,6 +45,10 @@ module.exports = function(environment) {
     ENV.APP.rootElement = '#ember-testing';
   }
 
+  if (environment === 'staging') {
+    ENV.APP.hostName = 'http://ppp-backend-stg.herokuapp.com';
+  }
+
   if (environment === 'production') {
     ENV.APP.hostName = 'http://pim-pam-pum-backend.herokuapp.com';
   }
