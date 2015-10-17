@@ -10,7 +10,7 @@ export default Ember.Controller.extend(EmberValidations, {
       },
       format: {
         with: /^[\w+\-.]+@[a-z\d\-.]+\.[a-z]+$/i,
-          message: 'debe ser una dirección de e-mail válida'
+        message: 'debe ser una dirección de e-mail válida'
       }
     },
     password: {

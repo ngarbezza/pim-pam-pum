@@ -7,6 +7,7 @@ var Router = Ember.Router.extend({
 
 Router.map(function() {
   this.route('eventos');
+  this.route('nuevo-evento');
   this.route('login');
   this.route('signup');
   this.route('logout');

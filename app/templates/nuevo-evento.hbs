@@ -1,0 +1,24 @@
+<h3>Nuevo evento</h3>
+
+<form class="form" {{action 'crear' on='submit'}}>
+
+  <hr/>
+
+  <label for="nombre">¿Cómo vas a llamar a tu evento?</label>
+  {{validated-input type="text" value=nombre placeholder="Ingrese el nombre"  errors=errors.nombre}}
+
+  <br/>
+
+  <label for="descripcion">¿Alguna información útil más?</label>
+  {{validated-input type="text" value=descripcion placeholder="Ingrese la descripción"  errors=errors.descripcion}}
+
+  <br/>
+
+  <label for="fecha">¿Cuándo va a ser?</label>
+  {{bootstrap-datepicker-inline value=fecha}}
+
+  <hr/>
+
+  <button type="submit" class="btn btn-md btn-primary"><span class="glyphicon glyphicon-calendar"></span> Crear!</button>
+
+</form>
