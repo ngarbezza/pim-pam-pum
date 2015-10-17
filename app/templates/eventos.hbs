@@ -1,7 +1,28 @@
-<ul>
-  {{#each model as |evento|}}
-    <li>
-      {{evento.id}} - {{evento.nombre}} - {{evento.descripcion}} - {{evento.fecha}}
-    </li>
-  {{/each}}
-</ul>
+
+<div class="conteiner">
+
+
+  <table class="table table-hover ">
+
+      <thead>
+      <tr>
+          <th>Nombre Evento</th>
+          <th>Descripcion</th>
+          <th>Descripcion</th>
+      </tr>
+      </thead>
+      <tbody>
+
+
+      {{#each model as |evento|}}
+          <tr>
+            <td>{{evento.id}} - {{evento.nombre}}</td>
+            <td> {{evento.descripcion}}</td>
+            <td>{{evento.fecha}}</td>
+          </tr>
+      {{/each}}
+
+      </tbody>
+  </table>
+
+</div>
