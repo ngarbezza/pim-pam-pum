@@ -1,4 +1,4 @@
-
+{{! templates/index.js }}
 <div class="conteiner">
 
 
@@ -8,7 +8,8 @@
       <tr>
           <th>Nombre Evento</th>
           <th>Descripcion</th>
-          <th>Descripcion</th>
+          <th>Fecha</th>
+
       </tr>
       </thead>
       <tbody>
@@ -19,6 +20,7 @@
             <td>{{evento.id}} - {{evento.nombre}}</td>
             <td> {{evento.descripcion}}</td>
             <td>{{evento.fecha}}</td>
+          
           </tr>
       {{/each}}
 
