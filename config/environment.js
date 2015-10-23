@@ -6,6 +6,8 @@ module.exports = function(environment) {
     environment: environment,
     baseURL: '/',
     locationType: 'auto',
+    rollbarToken: '28a64d06be414baabc683f1415742709',
+    rollbarVerbose: false,
 
     //este export es para poder acceder a las variables globales en produccion.
     exportApplicationGlobal: true,
@@ -32,6 +34,7 @@ module.exports = function(environment) {
     // ENV.APP.LOG_VIEW_LOOKUPS = true;
 
     ENV.APP.hostName = 'http://localhost:3000';
+    ENV.rollbarVerbose = true;
   }
 
   if (environment === 'test') {
@@ -59,7 +62,6 @@ module.exports = function(environment) {
     'connect-src': "'self' " + ENV.APP.hostName
   };
 
-  //
   ENV['simple-auth'] = {
     authenticator: 'authenticator:pimpampum',
     authorizer: 'authorizer:pimpampum',
