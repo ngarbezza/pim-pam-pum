@@ -8,6 +8,7 @@ module.exports = function(environment) {
     locationType: 'auto',
     rollbarToken: '28a64d06be414baabc683f1415742709',
     rollbarVerbose: false,
+    rollbarApiHost: 'https://api.rollbar.com',
 
     //este export es para poder acceder a las variables globales en produccion.
     exportApplicationGlobal: true,
@@ -59,7 +60,7 @@ module.exports = function(environment) {
 
   // cross-origin
   ENV.contentSecurityPolicy = {
-    'connect-src': "'self' " + ENV.APP.hostName
+    'connect-src': "'self' " + ENV.APP.hostName + ' ' + ENV.rollbarApiHost
   };
 
   ENV['simple-auth'] = {
