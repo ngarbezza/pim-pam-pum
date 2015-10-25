@@ -4,6 +4,11 @@ import EmberValidations from 'ember-validations';
 export default Ember.Controller.extend(EmberValidations, {
 
   validations: {
+    username: {
+      presence: {
+        message: 'ingrese el nombre de usuario'
+      }
+    },
     userEmail: {
       presence: {
         message: 'ingrese el e-mail'
@@ -36,19 +41,19 @@ export default Ember.Controller.extend(EmberValidations, {
 
   actions: {
     createUser: function () {
-      var email = this.get('userEmail');
-      var password = this.get('userPassword');
+      var self = this;
 
-      var user = this.store.createRecord('user', {
-        email: email,
-        password: password
+      var user = self.store.createRecord('user', {
+        username: self.get('username'),
+        email: self.get('userEmail'),
+        password: self.get('userPassword')
       });
-      this.set('model', user);
 
-      user.save();
-      if(user.errors === undefined){
-        this.transitionToRoute('login');
-      }
+      user.save().then(function () {
+        self.transitionToRoute('login');
+      }, function () {
+        self.set('model', user);
+      });
     }
   }
 });
