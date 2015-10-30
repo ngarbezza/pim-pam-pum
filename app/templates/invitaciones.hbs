@@ -1,0 +1,32 @@
+<div class="conteiner">
+
+
+  <table class="table table-hover ">
+
+    <thead>
+    <tr>
+      <th>Nombre Evento</th>
+      <th>Fecha</th>
+      <th></th>
+      <th></th>
+    </tr>
+    </thead>
+    <tbody>
+
+
+    {{#each model as |invitacion|}}
+      <tr>
+        <td>{{invitacion.evento.id}} - {{invitacion.evento.nombre}}</td>
+        <td>{{invitacion.evento.fecha}}</td>
+        <td><a href="#">Ver mas...</a></td>
+        <td>
+          <button>Aceptar</button>
+          <button>Rechazar</button>
+        </td>
+      </tr>
+    {{/each}}
+
+    </tbody>
+  </table>
+
+</div>
