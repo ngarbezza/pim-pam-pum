@@ -1,7 +1,8 @@
 <div class="container">
 
+  <h3>Invitaciones recibidas</h3>
 
-  <table class="table table-hover ">
+  <table class="table table-hover">
 
     <thead>
     <tr>
@@ -18,7 +19,7 @@
       <tr>
         <td>{{invitacion.id_evento}} - {{invitacion.nombre_evento}}</td>
         <td>{{invitacion.fecha_evento}}</td>
-        <td><a href="#">Ver mas...</a></td>
+        <td>{{link-to 'Ver más...' 'evento' invitacion.id_evento}}</td>
         <td>
           <button>Aceptar</button>
           <button>Rechazar</button>
