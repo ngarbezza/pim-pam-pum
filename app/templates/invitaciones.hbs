@@ -21,8 +21,22 @@
         <td>{{invitacion.fecha_evento}}</td>
         <td>{{link-to 'Ver más...' 'evento' invitacion.id_evento}}</td>
         <td>
-          <button>Aceptar</button>
-          <button>Rechazar</button>
+          {{#if invitacion.sin_confirmar }}
+            <span class="label label-warning">Todavía no confirmaste!</span>
+            <button {{action 'aceptar' invitacion}}>Aceptar</button>
+            <button {{action 'rechazar' invitacion}}>Rechazar</button>
+          {{/if}}
+
+          {{#if invitacion.aceptada }}
+            <span class="label label-success">Aceptada</span>
+            <button {{action 'rechazar' invitacion}}>Rechazar</button>
+          {{/if}}
+
+          {{#if invitacion.rechazada }}
+            <span class="label label-default">Rechazada</span>
+            <button {{action 'aceptar' invitacion}}>Aceptar</button>
+          {{/if}}
+
         </td>
       </tr>
     {{/each}}
