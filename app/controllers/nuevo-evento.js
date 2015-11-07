@@ -3,12 +3,9 @@ import Ember from 'ember';
 export default Ember.Controller.extend({
   actions: {
     crear: function () {
-      console.log('creando evento');
-
       var nombreEvento = this.get('nombre');
       var descripcion = this.get('descripcion');
       var fecha = this.get('fecha');
-
 
       var evento = this.store.createRecord('Evento', {
         nombre: nombreEvento,

@@ -14,6 +14,12 @@ module.exports = function(defaults) {
             config.environment + '" } };\n' + content;
         }
       }
+    },
+
+    'ember-bootstrap-datetimepicker': {
+      //"importBootstrapCSS": true,
+      "importBootstrapJS": true,
+      "importBootstrapTheme": true
     }
   });
 

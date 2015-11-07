@@ -15,7 +15,15 @@
   <br/>
 
   <label for="fecha">¿Cuándo va a ser?</label>
-  {{bootstrap-datepicker-inline value=fecha}}
+  {{#bs-datetimepicker
+    date=fecha
+    inline=true
+    noIcon=true
+    sideBySide=true
+    forceDateOutput=true
+    updateDate=(action (mut fecha))}}
+
+  {{/bs-datetimepicker}}
 
   <hr/>
 

@@ -15,7 +15,10 @@
     "jquery": "^1.11.3",
     "loader.js": "ember-cli/loader.js#3.2.1",
     "qunit": "~1.18.0",
-    "rollbar": "~1.7.2"
+    "rollbar": "~1.7.2",
+    "moment": ">= 2.8.0",
+    "moment-timezone": ">= 0.1.0",
+    "eonasdan-bootstrap-datetimepicker": "~4.17.37"
   },
   "devDependencies": {
     "bootstrap-sass-official": "~3.3.5"
