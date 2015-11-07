@@ -2,30 +2,35 @@
 
 <h3>Nuevo evento</h3>
 
-<form class="form" {{action 'crear' on='submit'}}>
+<form class="form" {{action 'crear' on='submit'}} role="form">
 
   <hr/>
+  <div class="container-fluid">
 
-  <label for="nombre">¿Cómo vas a llamar a tu evento?</label>
-  {{validated-input type="text" value=nombre placeholder="Ingrese el nombre"  errors=errors.nombre}}
+    <div class="form-group">
+      <label for="nombre">¿Cómo vas a llamar a tu evento?</label>
+      {{validated-input type="text" value=nombre placeholder="Ingrese el nombre"  errors=errors.nombre}}
+    </div>
 
-  <br/>
 
-  <label for="descripcion">¿Alguna información útil más?</label>
-  {{validated-input type="text" value=descripcion placeholder="Ingrese la descripción"  errors=errors.descripcion}}
+    <div class="form-group">
+      <label for="descripcion">¿Alguna información útil más?</label>
+      {{validated-input type="text" value=descripcion placeholder="Ingrese la descripción"  errors=errors.descripcion}}
+    </div>
 
-  <br/>
+    <label for="fecha">¿Cuándo va a ser?</label>
 
-  <label for="fecha">¿Cuándo va a ser?</label>
-  {{#bs-datetimepicker
-    date=fecha
-    inline=true
-    noIcon=true
-    sideBySide=true
-    forceDateOutput=true
-    updateDate=(action (mut fecha))}}
+    <div class="row">
+      {{bs-datetimepicker
+          date=fecha
+          inline=true
+          noIcon=true
+          sideBySide=true
+          forceDateOutput=true
+          updateDate=(action (mut fecha))}}
+    </div>
 
-  {{/bs-datetimepicker}}
+  </div>
 
   <hr/>
 
