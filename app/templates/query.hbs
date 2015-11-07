@@ -1,14 +1,15 @@
 <div>
-  <span>{{query.query.results.channel.location.city}}</span>
 
-  <span>Temperatura {{query.query.results.channel.item.condition.temp}} C</span>
+  <span>{{clima.ciudad}}</span>
 
+  <span>{{clima.condicion}}</span>
 
-  <span>Humedad {{query.query.results.channel.atmosphere.humidity}} %</span>
+  <span><strong>Temperatura</strong>: {{clima.temperatura}}° {{clima.unidad_temperatura}}</span>
 
-  <span>Presion {{query.query.results.channel.atmosphere.humidity}} %</span>
+  <span><strong>Viento</strong>: {{clima.velocidad_viento}} km/h en dirección {{clima.direccion_viento}}</span>
 
+  <span><strong>Humedad</strong>: {{clima.porcentaje_humedad}} %</span>
 
-
+  <span><strong>Presión atmosférica</strong>: {{clima.presion_atmosferica}} %</span>
 
 </div>
