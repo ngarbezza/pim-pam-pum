@@ -21,8 +21,8 @@ module.exports = function(environment) {
     },
 
     APP: {
-      LOCALE: 'en'
-      // Here you can pass flags/options to your application instance
+      LOCALE: 'es' //para internacionalizacion
+      // Here you cas pass flags/options to your application instance
       // when it is created
     }
   };

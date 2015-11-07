@@ -14,12 +14,12 @@
       </thead>
       <tbody>
 
-
       {{#each model as |evento|}}
           <tr>
             <td>{{evento.id}} - {{evento.nombre}}</td>
             <td> {{evento.descripcion}}</td>
-            <td>{{evento.fecha}}</td>
+            <td>{{evento.fechaFormateada }}
+            </td>
 
           </tr>
       {{/each}}

@@ -13,6 +13,10 @@ export default DS.Model.extend(NonRestAction, {
   rechazada: DS.attr('boolean'),
   en_duda: DS.attr('boolean'),
 
+  fechaFormateada: function () {
+    return moment(this.get('fecha_evento')).format('DD/MM/YYYY');
+  }.property('fecha_evento'),
+
   aceptar: function () {
     const type = this.constructor.typeKey;
     return this.nonRestAction('aceptar', 'PUT').then((result) => {

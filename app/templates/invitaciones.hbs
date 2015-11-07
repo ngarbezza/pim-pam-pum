@@ -18,7 +18,7 @@
     {{#each model as |invitacion|}}
       <tr>
         <td>{{invitacion.id_evento}} - {{invitacion.nombre_evento}}</td>
-        <td>{{invitacion.fecha_evento}}</td>
+        <td>{{invitacion.fechaFormateada}}</td>
         <td>{{link-to 'Ver más...' 'evento' invitacion.id_evento}}</td>
         <td>
           {{#if invitacion.sin_confirmar }}
