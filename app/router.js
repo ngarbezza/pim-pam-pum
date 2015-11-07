@@ -13,6 +13,9 @@ Router.map(function() {
   this.route('logout');
   this.route('invitaciones');
   this.route('query');
+
+  this.resource('evento', {path:'/eventos/:id_evento'});
+  this.route('authenticated_route');
 });
 
 export default Router;
