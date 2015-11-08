@@ -12,12 +12,6 @@
       {{validated-input type="text" value=nombre placeholder="Ingrese el nombre"  errors=errors.nombre}}
     </div>
 
-
-    <div class="form-group">
-      <label for="descripcion">¿Alguna información útil más?</label>
-      {{validated-input type="text" value=descripcion placeholder="Ingrese la descripción"  errors=errors.descripcion}}
-    </div>
-
     <label for="fecha">¿Cuándo va a ser?</label>
 
     <div class="row">
@@ -29,6 +23,16 @@
           forceDateOutput=true
           updateDate=(action (mut fecha))}}
     </div>
+
+      <div class="form-group">
+          <label for="nombre">¿Donde es?</label>
+        {{validated-input type="text" value=direccion placeholder="Ingrese la direccion"  errors=errors.direccion}}
+      </div>
+
+      <div class="form-group">
+          <label for="descripcion">¿Alguna información útil más?</label>
+        {{validated-input type="text" value=descripcion placeholder="Ingrese la descripción"  errors=errors.descripcion}}
+      </div>
 
   </div>
 

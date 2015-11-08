@@ -104,6 +104,37 @@ div .login{
   }
 }
 
+div .clima{
+
+  border-color:#dcdcdc;
+  border: medium;
+  background-color:#d3f694;
+
+  margin: auto;
+  max-width: 70%;
+  width: 500px;
+
+
+
+  h3{
+    padding-left: 5%;
+    padding-top: 10px;
+    font-style: oblique;
+  }
+
+  .row{
+    padding-left: 10%;
+    padding-top: 5%;
+    padding: 5%;
+
+  }
+
+  span{
+
+    font-weight: bold;
+  }
+}
+
 div .invitacionRecibida{
   /*background-image:  url("/app/styles/imagenes/download.jpg");*/
 

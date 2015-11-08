@@ -6,11 +6,14 @@ export default Ember.Controller.extend({
       var nombreEvento = this.get('nombre');
       var descripcion = this.get('descripcion');
       var fecha = this.get('fecha');
+      var direccion = this.get('direccion')
 
       var evento = this.store.createRecord('Evento', {
         nombre: nombreEvento,
         descripcion: descripcion,
-        fecha:fecha
+        fecha:fecha,
+        direccion: direccion
+
       });
       this.set('model', evento);
 
@@ -20,6 +23,7 @@ export default Ember.Controller.extend({
         this.set('nombre', undefined);
         this.set('descripcion', undefined);
         this.set('fecha', undefined);
+        this.set('direccion', undefined)
         this.transitionToRoute('eventos');
       }
 
