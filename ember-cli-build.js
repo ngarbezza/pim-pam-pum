@@ -44,5 +44,7 @@ module.exports = function(defaults) {
     destDir: 'fonts/bootstrap/'
   });
 
+  app.import('vendor/gmaps.js');
+
   return app.toTree();
 };

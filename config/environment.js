@@ -27,7 +27,20 @@ module.exports = function(environment) {
     }
   };
 
+  ENV.googleMap = {
+    // your configuration goes here
+   // apiKey:'AIzaSyCdnVM8ewS_v5LNPbETVxp7j8EL8oRqJQE'
+  }
+
+
   if (environment === 'development') {
+   /* ENV.contentSecurityPolicy = {
+      'script-src': "'self' 'unsafe-eval' https:/*//*.googleapis.com https:/*//*.gstatic.com",
+      'img-src': "'self' https:/*//*.googleapis.com https:/*//*.gstatic.com",
+      'font-src': "'self' https:/*//*.gstatic.com",
+      'style-src': "'self' 'unsafe-inline' https:/*//*.googleapis.com"
+    }*/
+
     // ENV.APP.LOG_RESOLVER = true;
     // ENV.APP.LOG_ACTIVE_GENERATION = true;
     // ENV.APP.LOG_TRANSITIONS = true;
@@ -59,9 +72,11 @@ module.exports = function(environment) {
   }
 
   // cross-origin
+/*
   ENV.contentSecurityPolicy = {
     'connect-src': "'self' " + ENV.APP.hostName + ' ' + ENV.rollbarApiHost
   };
+*/
 
   ENV['simple-auth'] = {
     authenticator: 'authenticator:pimpampum',
@@ -76,5 +91,14 @@ module.exports = function(environment) {
     tokenPropertyName: 'auth_token'
   };
 
+  ENV.contentSecurityPolicy = {
+    'connect-src': "'self' " + ENV.APP.hostName + ' ' + ENV.rollbarApiHost + ' ' + 'maps.gstatic.com https://maps.googleapis.com',
+
+    'default-src': "'none'",
+    'script-src': "'self' 'unsafe-eval' *.googleapis.com maps.gstatic.com",
+    'font-src': "'self' fonts.gstatic.com",
+    'img-src': "'self' *.googleapis.com maps.gstatic.com csi.gstatic.com",
+    'style-src': "'self' 'unsafe-inline' fonts.googleapis.com maps.gstatic.com"
+  };
   return ENV;
 };
