@@ -1,0 +1,23 @@
+<div class="container borde-redondeado">
+
+  <h3>Agregar invitados a "{{evento.nombre}}"</h3>
+
+  <div class="input-group">
+    {{aupac-ember-data-typeahead
+        class='form-control'
+        params=sugerenciasParams
+        modelClass='invitado'
+        action='invitadoElegido'
+    }}
+  </div>
+
+  <h4>Nuevos invitados</h4>
+
+  <ul>
+    {{#each invitadosAAgregar as |invitado|}}
+      <li>{{invitado.nombreUsuario}}</li>
+    {{/each}}
+  </ul>
+
+  <button class="btn btn-md boton-pim" {{action 'enviarInvitaciones'}}>Enviar Invitaciones</button>
+</div>

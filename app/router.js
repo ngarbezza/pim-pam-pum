@@ -14,8 +14,9 @@ Router.map(function() {
   this.route('invitaciones');
   this.route('query');
 
-  this.resource('evento', {path:'/eventos/:id_evento'});
-  this.route('authenticated_route');
+  this.route('invitacion-detalle', {path:'/eventos/:id_evento/invitacion'});
+  this.route('evento-detalle', {path:'/eventos/:id/detalles'});
+  this.route('agregar-invitados', {path:'/eventos/:id/agregar-invitados'});
 });
 
 export default Router;
