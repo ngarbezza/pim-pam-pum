@@ -7,6 +7,7 @@
       <thead>
       <tr>
           <th>Nombre Evento</th>
+          <th>Lugar</th>
           <th>Descripcion</th>
           <th>Fecha</th>
 
@@ -17,7 +18,8 @@
       {{#each model as |evento|}}
           <tr>
             <td>{{evento.id}} - {{evento.nombre}}</td>
-            <td> {{evento.descripcion}}</td>
+              <td> {{evento.direccion}}</td>
+              <td> {{evento.descripcion}}</td>
             <td>{{evento.fechaFormateada }}
             </td>
 

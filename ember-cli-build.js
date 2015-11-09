@@ -43,6 +43,9 @@ module.exports = function(defaults) {
   app.import('bower_components/bootstrap-sass-official/assets/fonts/bootstrap/glyphicons-halflings-regular.woff', {
     destDir: 'fonts/bootstrap/'
   });
+  app.import('bower_components/bootstrap-sass-official/assets/fonts/bootstrap/glyphicons-halflings-regular.woff2', {
+    destDir: 'fonts/bootstrap/'
+  });
 
   return app.toTree();
 };

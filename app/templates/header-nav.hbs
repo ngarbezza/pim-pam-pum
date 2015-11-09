@@ -40,16 +40,10 @@
 
 
               {{#if session.isAuthenticated}}
-                <li class="dropdown">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                        <span class="glyphicon glyphicon-user"></span>
+                <li>
 
-                        <ul class="dropdown-menu" role="menu">
-                            <li><a href="#">Crear evento</a></li>
-                            <li class="divider"></li>
-                            <li><a href="#">Separated link</a></li>
-                        </ul>
-                    </a>
+                  {{#link-to 'query' }}<span class=""></span> Clima{{/link-to}}
+
                 </li>
                 <li>
                   {{#link-to 'logout'  }}<span class="glyphicon glyphicon-icon-off"></span>Salir{{/link-to}}

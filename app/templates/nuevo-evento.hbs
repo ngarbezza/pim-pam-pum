@@ -1,40 +1,46 @@
 <div class="crea-evento borde-redondeado">
 
-<h3>Nuevo evento</h3>
+  <h3>Nuevo evento</h3>
 
-<form class="form" {{action 'crear' on='submit'}} role="form">
+  <form class="form" {{action 'crear' on='submit'}} role="form">
 
-  <hr/>
-  <div class="container-fluid">
+    <hr/>
+    <div class="container-fluid">
 
-    <div class="form-group">
-      <label for="nombre">¿Cómo vas a llamar a tu evento?</label>
-      {{validated-input type="text" value=nombre placeholder="Ingrese el nombre"  errors=errors.nombre}}
+      <div class="form-group">
+        <label for="nombre">¿Cómo vas a llamar a tu evento?</label>
+        {{validated-input type="text" value=nombre placeholder="Ingrese el nombre"  errors=errors.nombre}}
+      </div>
+
+      <div class="form-group">
+        <label for="fecha">¿Cuándo va a ser?</label>
+        {{bs-datetimepicker
+            format='dddd D [de] MMMM [de] YYYY[,] h:mm a'
+            pickSeconds=true
+            date=fecha
+            keepOpen=true
+            sideBySide=true
+            forceDateOutput=true
+            updateDate=(action (mut fecha))}}
+      </div>
+
+      <div class="form-group">
+        <label for="nombre">¿Dónde es?</label>
+        {{validated-input type="text" value=direccion placeholder="Ingrese la direccion"  errors=errors.direccion}}
+      </div>
+
+      <div class="form-group">
+        <label for="descripcion">¿Alguna información útil más?</label>
+        {{validated-input type="text" value=descripcion placeholder="Ingrese la descripción"  errors=errors.descripcion}}
+      </div>
+
     </div>
 
+    <hr/>
 
-    <div class="form-group">
-      <label for="descripcion">¿Alguna información útil más?</label>
-      {{validated-input type="text" value=descripcion placeholder="Ingrese la descripción"  errors=errors.descripcion}}
-    </div>
+    <button type="submit" class="btn btn-md boton-pim" data-loading-text="Loading..." disabled={{isInvalid}}>
+      <span class="glyphicon glyphicon-calendar"></span> Crear!
+    </button>
 
-    <label for="fecha">¿Cuándo va a ser?</label>
-
-    <div class="row">
-      {{bs-datetimepicker
-          date=fecha
-          inline=true
-          noIcon=true
-          sideBySide=true
-          forceDateOutput=true
-          updateDate=(action (mut fecha))}}
-    </div>
-
-  </div>
-
-  <hr/>
-
-  <button type="submit" class="btn btn-md boton-pim" data-loading-text="Loading..."><span class="glyphicon glyphicon-calendar"></span> Crear!</button>
-
-</form>
+  </form>
 </div>
