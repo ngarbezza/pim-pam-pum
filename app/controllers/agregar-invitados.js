@@ -23,6 +23,7 @@ export default Ember.Controller.extend({
       }
     },
     enviarInvitaciones: function () {
+      var self = this;
       var invitarPath = window.PimPamPum.hostName + '/api/invitaciones/invitar';
       var invitarParams = {
         id_evento: this.get('evento').get('id'),
@@ -32,6 +33,8 @@ export default Ember.Controller.extend({
       };
       Ember.$.post(invitarPath, invitarParams).then(function () {
         console.log('invitaciones enviadas correctamente');
+        self.set('invitadosAAgregar', Ember.A([]));
+        self.transitionToRoute('eventos');
       }, function (error) {
         console.log('fallo el envío de invitaciones');
         console.log(error);
