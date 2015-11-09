@@ -19,7 +19,10 @@
         <td>{{evento.id}} - {{evento.nombre}}</td>
         <td>{{evento.descripcion}}</td>
         <td>{{evento.fechaFormateada}}</td>
-        <td><button {{action 'agregarInvitados' evento}}>Agregar invitados</button></td>
+        <td>
+          <button {{action 'verDetalles' evento}}>Detalles</button>
+          <button {{action 'agregarInvitados' evento}}>Agregar invitados</button>
+        </td>
       </tr>
     {{/each}}
 

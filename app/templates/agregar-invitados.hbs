@@ -1,16 +1,17 @@
 <div class="container borde-redondeado">
 
-  <h3>Agregar invitados</h3>
+  <h3>Agregar invitados a "{{evento.nombre}}"</h3>
 
   <div class="input-group">
     {{aupac-ember-data-typeahead
         class='form-control'
+        params=sugerenciasParams
         modelClass='invitado'
         action='invitadoElegido'
     }}
   </div>
 
-  <h4>Quiénes van</h4>
+  <h4>Nuevos invitados</h4>
 
   <ul>
     {{#each invitadosAAgregar as |invitado|}}

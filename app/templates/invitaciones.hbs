@@ -1,4 +1,4 @@
-<div class="container invitacionRecibida borde-redondeado" >
+<div class="container invitacionRecibida borde-redondeado">
 
   <h3>Invitaciones recibidas</h3>
 
@@ -19,7 +19,7 @@
       <tr>
         <td>{{invitacion.id_evento}} - {{invitacion.nombre_evento}}</td>
         <td>{{invitacion.fechaFormateada}}</td>
-        <td>{{link-to 'Ver más...' 'evento' invitacion.id_evento}}</td>
+        <td><button {{action 'verDetalleInvitacion' invitacion}}>Ver más...</button></td>
         <td>
           {{#if invitacion.sin_confirmar }}
             <span class="label label-warning">Todavía no confirmaste!</span>
@@ -43,5 +43,4 @@
 
     </tbody>
   </table>
-
 </div>

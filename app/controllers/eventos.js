@@ -2,8 +2,11 @@ import Ember from 'ember';
 
 var EventosController = Ember.Controller.extend({
   actions: {
+    verDetalles: function (evento) {
+      this.transitionToRoute('evento-detalle', evento);
+    },
     agregarInvitados: function (evento) {
-      this.transitionToRoute('agregar-invitados', {id_evento: evento.id});
+      this.transitionToRoute('agregar-invitados', evento);
     }
   }
 });
