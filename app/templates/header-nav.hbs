@@ -9,8 +9,6 @@
       </button>
     </div>
 
-
-
     <div class="collapse navbar-collapse" id="header_nav_collapse">
 
       {{#if session.isAuthenticated}}
@@ -31,39 +29,29 @@
           </li>
         </ul>
 
-
       {{/if}}
-
-
 
       <ul class="nav navbar-nav navbar-right">
 
-
         {{#if session.isAuthenticated}}
           <li>
-
             {{#link-to 'query' }}<span class=""></span> Clima{{/link-to}}
-
           </li>
+
           <li>
             {{#link-to 'logout'  }}<span class="glyphicon glyphicon-icon-off"></span>Salir{{/link-to}}
           </li>
         {{else}}
-
           <li>
             {{#link-to 'login' }}<span class="glyphicon glyphicon-cog"></span> Login{{/link-to}}
-
           </li>
+
           <li>
             {{#link-to 'signup'}}<span class="glyphicon glyphicon-user-add"></span> Registrarme{{/link-to}}
-
           </li>
-
-
 
         {{/if}}
       </ul>
     </div>
-
   </div>
 </nav>
