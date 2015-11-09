@@ -4,6 +4,6 @@ import AuthenticatedRoute from './authenticated-route';
 export default Ember.Route.extend(AuthenticatedRoute, {
 
   model: function () {
-    return this.store.findAll('evento');
+    return this.store.findAll('evento', { reload: true });
   }
 });

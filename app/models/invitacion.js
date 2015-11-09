@@ -1,6 +1,7 @@
 import Ember from 'ember';
 import DS from 'ember-data';
 import NonRestAction from './non-rest-action';
+import moment from 'moment';
 
 Ember.Inflector.inflector.irregular('invitacion', 'invitaciones');
 

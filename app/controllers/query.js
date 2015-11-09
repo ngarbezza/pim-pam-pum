@@ -7,7 +7,7 @@ export default Ember.Controller.extend({
     var clima_path = window.PimPamPum.hostName + '/api/clima';
     var clima_params = {codigo_woeid: '466821'};
 
-    $.get(clima_path, clima_params, function(data) {
+    Ember.$.get(clima_path, clima_params, function(data) {
       self.set('clima', data);
       console.log(data);
     });

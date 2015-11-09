@@ -2,7 +2,6 @@ import Ember from 'ember';
 
 export default Ember.Mixin.create({
   nonRestAction: function (action, method, data) {
-    const type = this.constructor.typeKey;
     const adapter = this.container.lookup('adapter:application');
 
     return adapter.ajax(this.getActionUrl(action, adapter), method, { data: data });
