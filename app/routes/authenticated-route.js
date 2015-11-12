@@ -6,6 +6,14 @@ var AuthenticatedRoute = Ember.Mixin.create({
     if (!this.get('session.isAuthenticated')) {
       this.transitionTo('login');
     }
+  },
+
+  actions: {
+    error: function (err) {
+      // error handler global
+      console.log(err);
+      this.transitionTo('logout');
+    }
   }
 });
 

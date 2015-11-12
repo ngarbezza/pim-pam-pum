@@ -19,9 +19,9 @@ export default TokenAuthenticator.extend({
         Ember.run(function() {
           resolve(response);
         });
-      }, function(xhr) {
+      }, function() {
         Ember.run(function() {
-          reject(xhr.responseJSON || xhr.responseText);
+          resolve();
         });
       });
     });
