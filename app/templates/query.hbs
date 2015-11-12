@@ -1,0 +1,29 @@
+<div class="clima borde-redondeado container">
+
+
+
+{{#if clima.temperatura}}
+    <h3>Lugar: {{clima.ciudad}}</h3>
+<div class="row">
+  <span>{{clima.condicion}}</span>
+</div>
+<div class="row">
+  <span>Temperatura</span>: {{clima.temperatura}}° {{clima.unidad_temperatura}}
+</div>
+<div class="row">
+  <span>Viento</span>: {{clima.velocidad_viento}} km/h en dirección {{clima.direccion_viento}}
+</div>
+<div class="row">
+  <span>Humedad</span>: {{clima.porcentaje_humedad}} %
+
+</div>
+<div class="row">
+  <span>Presión atmosférica</span>: {{clima.presion_atmosferica}} %
+</div>
+{{else}}
+<div class="row">
+  <span>Ouch!! Servicio no disponible</span>
+</div>
+{{/if}}
+
+</div>

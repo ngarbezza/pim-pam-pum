@@ -1,70 +1,57 @@
 <nav class="navbar navbar-default" role="navigation">
-    <div class="container-fluid">
+  <div class="container-fluid">
 
-        <div class="navbar-header">
-            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
-                    data-target="#header_nav_collapse">
-                <span class="sr-only">Toggle navigation</span>
-                <span class="icon-bar"></span>
-            </button>
-        </div>
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
+              data-target="#header_nav_collapse">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+      </button>
+    </div>
 
+    <div class="collapse navbar-collapse" id="header_nav_collapse">
 
+      {{#if session.isAuthenticated}}
 
-        <div class="collapse navbar-collapse" id="header_nav_collapse">
+        <ul class="nav navbar-nav">
+          <li>
+            {{#link-to 'invitaciones'}}Invitaciones Recibidas{{/link-to}}
+          </li>
+        </ul>
+        <ul class="nav navbar-nav">
+          <li>
+            {{#link-to 'eventos'}}Mis eventos{{/link-to}}
+          </li>
+        </ul>
+        <ul class="nav navbar-nav">
+          <li>
+            {{#link-to 'nuevo-evento'}}Creá tu evento{{/link-to}}
+          </li>
+        </ul>
 
-          {{#if session.isAuthenticated}}
+      {{/if}}
 
-            <ul class="nav navbar-nav">
-                <li>
-                    <a href="#">Invitaciones</a>
-                </li>
-            </ul>
-            <ul class="nav navbar-nav">
-                <li>
-                  {{#link-to 'eventos'}}Mis eventos{{/link-to}}
-                </li>
-            </ul>
+      <ul class="nav navbar-nav navbar-right">
 
+        {{#if session.isAuthenticated}}
+          <li>
+            {{#link-to 'query' }}<span class=""></span> Clima{{/link-to}}
+          </li>
+
+          <li>
+            {{#link-to 'logout'  }}<span class="glyphicon glyphicon-icon-off"></span>Salir{{/link-to}}
+          </li>
+        {{else}}
+          <li>
+            {{#link-to 'login' }}<span class="glyphicon glyphicon-cog"></span> Login{{/link-to}}
+          </li>
+
+          <li>
+            {{#link-to 'signup'}}<span class="glyphicon glyphicon-user-add"></span> Registrarme{{/link-to}}
+          </li>
 
         {{/if}}
-
-
-
-            <ul class="nav navbar-nav navbar-right">
-
-
-              {{#if session.isAuthenticated}}
-                <li class="dropdown">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                        <span class="glyphicon glyphicon-user"></span>
-
-                        <ul class="dropdown-menu" role="menu">
-                            <li><a href="#">Crear evento</a></li>
-                            <li class="divider"></li>
-                            <li><a href="#">Separated link</a></li>
-                        </ul>
-                    </a>
-                </li>
-                <li>
-                  {{#link-to 'logout'  }}<span class="glyphicon glyphicon-icon-off"></span>Salir{{/link-to}}
-                </li>
-              {{else}}
-
-                  <li>
-                    {{#link-to 'login' }}<span class="glyphicon glyphicon-cog"></span> Login{{/link-to}}
-
-                  </li>
-                  <li>
-                    {{#link-to 'signup'}}<span class="glyphicon glyphicon-user-add"></span> Registrarme{{/link-to}}
-
-                  </li>
-
-
-
-              {{/if}}
-            </ul>
-        </div>
-
+      </ul>
     </div>
+  </div>
 </nav>

@@ -1,7 +1,33 @@
-<ul>
-  {{#each model as |evento|}}
-    <li>
-      {{evento.id}} - {{evento.nombre}} - {{evento.descripcion}} - {{evento.fecha}}
-    </li>
-  {{/each}}
-</ul>
+<div class="container evento borde-redondeado">
+
+  <h3>Mis eventos creados</h3>
+
+  <table class="table table-hover ">
+
+    <thead>
+    <tr>
+      <th>Nombre Evento</th>
+      <th>Lugar</th>
+      <th>Descripción</th>
+      <th>Fecha</th>
+      <th></th>
+    </tr>
+    </thead>
+    <tbody>
+
+    {{#each model as |evento|}}
+      <tr>
+        <td>{{evento.id}} - {{evento.nombre}}</td>
+        <td>{{evento.direccion}}</td>
+        <td>{{evento.descripcion}}</td>
+        <td>{{evento.fechaFormateada}}</td>
+        <td>
+          <button {{action 'verDetalles' evento}}>Detalles</button>
+          <button {{action 'agregarInvitados' evento}}>Agregar invitados</button>
+        </td>
+      </tr>
+    {{/each}}
+
+      </tbody>
+  </table>
+</div>

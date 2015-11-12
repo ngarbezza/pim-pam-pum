@@ -10,7 +10,7 @@ export default Ember.Controller.extend(EmberValidations, {
       },
       format: {
         with: /^[\w+\-.]+@[a-z\d\-.]+\.[a-z]+$/i,
-          message: 'debe ser una dirección de e-mail válida'
+        message: 'debe ser una dirección de e-mail válida'
       }
     },
     password: {
@@ -32,10 +32,10 @@ export default Ember.Controller.extend(EmberValidations, {
 
       var self = this;
       this.get('session').authenticate(authenticator, credentials).then(function () {
-          self.transitionToRoute('eventos');
-      }, function (reason) {
-        console.log('failed login request');
-        console.log(reason);
+        self.set('loginErrors', false);
+        self.transitionToRoute('eventos');
+      }, function () {
+        self.set('loginErrors', true);
       });
     }
   }

@@ -7,9 +7,16 @@ var Router = Ember.Router.extend({
 
 Router.map(function() {
   this.route('eventos');
+  this.route('nuevo-evento');
   this.route('login');
   this.route('signup');
   this.route('logout');
+  this.route('invitaciones');
+  this.route('query');
+
+  this.route('invitacion-detalle', {path:'/eventos/:id_evento/invitacion'});
+  this.route('evento-detalle', {path:'/eventos/:id/detalles'});
+  this.route('agregar-invitados', {path:'/eventos/:id/agregar-invitados'});
 });
 
 export default Router;

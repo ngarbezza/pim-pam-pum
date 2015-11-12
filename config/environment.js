@@ -6,6 +6,12 @@ module.exports = function(environment) {
     environment: environment,
     baseURL: '/',
     locationType: 'auto',
+    rollbarToken: '28a64d06be414baabc683f1415742709',
+    rollbarVerbose: false,
+    rollbarApiHost: 'https://api.rollbar.com',
+    moment: {
+      includeLocales: ['es']
+    },
 
     //este export es para poder acceder a las variables globales en produccion.
     exportApplicationGlobal: true,
@@ -18,7 +24,8 @@ module.exports = function(environment) {
     },
 
     APP: {
-      // Here you can pass flags/options to your application instance
+      LOCALE: 'es' //para internacionalizacion
+      // Here you cas pass flags/options to your application instance
       // when it is created
     }
   };
@@ -31,6 +38,7 @@ module.exports = function(environment) {
     // ENV.APP.LOG_VIEW_LOOKUPS = true;
 
     ENV.APP.hostName = 'http://localhost:3000';
+    ENV.rollbarVerbose = true;
   }
 
   if (environment === 'test') {
@@ -45,16 +53,19 @@ module.exports = function(environment) {
     ENV.APP.rootElement = '#ember-testing';
   }
 
+  if (environment === 'staging') {
+    ENV.APP.hostName = 'http://ppp-backend-stg.herokuapp.com';
+  }
+
   if (environment === 'production') {
     ENV.APP.hostName = 'http://pim-pam-pum-backend.herokuapp.com';
   }
 
   // cross-origin
   ENV.contentSecurityPolicy = {
-    'connect-src': "'self' " + ENV.APP.hostName
+    'connect-src': "'self' " + ENV.APP.hostName + ' ' + ENV.rollbarApiHost
   };
 
-  //
   ENV['simple-auth'] = {
     authenticator: 'authenticator:pimpampum',
     authorizer: 'authorizer:pimpampum',

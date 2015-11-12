@@ -1,19 +1,28 @@
-<h3>Inicio de sesion</h3>
+<div class="login borde-redondeado">
+
+<h3>Inicio de sesión</h3>
 
 <form class="form" {{action 'authenticate' on='submit'}}>
 
-    <hr/>
+  <hr/>
 
-    <label for="identification" >Email de usuario</label>
+  {{#if loginErrors}}
+    <div class="alert alert-warning">
+      No se pudo iniciar sesión. Compruebe que su usuario y contraseña son correctos.
+    </div>
+  {{/if}}
 
+  <label for="identification">Email de usuario</label>
 
   {{validated-input type="text" value=identification placeholder="Ingrese Email"  errors=errors.identification}}
-    <br/>
-    <label for="password" >Contraseña</label>
+  <br/>
+  <label for="password">Contraseña</label>
 
   {{validated-input type="password" value=password placeholder="Ingrese Contraseña"  errors=errors.password}}
-    <hr/>
+  <hr/>
 
-    <button type="submit" class="btn btn-md btn-primary"><span class="glyphicon glyphicon-cog"></span> Login</button>
+  <button type="submit" class="btn btn-md boton-pim" data-loading-text="Loading..."><span class="glyphicon glyphicon-cog"></span> Login</button>
 
 </form>
+
+    </div>
