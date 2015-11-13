@@ -3,13 +3,38 @@
   <h3>{{model.nombre}}</h3>
 
   <div class="row">
-    <span>Descripción: </span>{{model.descripcion}}
+    <div class="col-md-4">
+      <div>
+        <span> Fecha:</span>
+
+        <p>{{model.fechaFormateada}}</p>
+      </div>
+    </div>
+
+    <div class="col-md-4">
+      <div>
+        <span> Dirección:</span>
+
+        <p>{{model.direccion}}</p>
+      </div>
+    </div>
   </div>
 
-  <div class="row">
-    <span> Fecha:</span>
+  {{#if model.descripcion }}
+    <div>
+      <span>Descripción: {{model.descripcion}}</span>
+    </div>
+  {{/if}}
 
-    <p>{{model.fechaFormateada}}</p>
-  </div>
+  <span>Confirmados:</span>
+  {{#if confirmados }}
+    <ul>
+      {{#each confirmados as |invitado|}}
+        <li>{{invitado.nombreUsuario}}</li>
+      {{/each}}
+    </ul>
+  {{else}}
+    No hay confirmados :(
+  {{/if}}
 
 </div>

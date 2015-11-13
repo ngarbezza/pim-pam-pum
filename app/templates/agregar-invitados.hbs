@@ -1,4 +1,4 @@
-<div class="container borde-redondeado">
+<div class="container borde-redondeado clima">
 
   <h3>Agregar invitados a "{{evento.nombre}}"</h3>
 
@@ -15,9 +15,12 @@
 
   <ul>
     {{#each invitadosAAgregar as |invitado|}}
-      <li>{{invitado.nombreUsuario}}</li>
+      <li>{{invitado.nombreUsuario}} - <a href="#" {{action 'eliminarElegido' invitado}}>quitar</a></li>
     {{/each}}
   </ul>
 
-  <button class="btn btn-md boton-pim" {{action 'enviarInvitaciones'}}>Enviar Invitaciones</button>
+  <div class="input-group">
+    <button class="btn btn-md boton-pim" {{action 'enviarInvitaciones'}} disabled={{isInvalid}}>Enviar Invitaciones</button>
+    <button class="btn btn-md boton-pum" {{action 'cancelarInvitaciones'}}>Cancelar</button>
+  </div>
 </div>
