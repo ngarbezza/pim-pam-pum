@@ -34,11 +34,11 @@ export default Ember.Controller.extend({
         })
       };
       Ember.$.post(invitarPath, invitarParams).then(function () {
-        console.log('invitaciones enviadas correctamente');
+        self.get('notify').success('Invitaciones enviadas correctamente.');
         self.set('invitadosAAgregar', []);
         self.transitionToRoute('eventos');
       }, function (error) {
-        console.log('fallo el envío de invitaciones');
+        self.get('notify').warning('Ocurrió un error al enviar las invitaciones.');
         console.log(error);
       });
     },

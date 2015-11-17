@@ -42,6 +42,7 @@ export default Ember.Controller.extend(EmberValidations, {
         self.set('descripcion', '');
         self.set('fecha', '');
         self.set('direccion', '');
+        self.get('notify').success('Evento creado correctamente!');
         self.transitionToRoute('eventos');
       }, function () {
         self.set('model', evento);

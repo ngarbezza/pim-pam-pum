@@ -1,6 +1,6 @@
 import Ember from 'ember';
 
-export default Ember.Route.extend({
+var LoginRoute = Ember.Route.extend({
 
   beforeModel: function () {
     if (this.get('session.isAuthenticated')) {
@@ -8,3 +8,5 @@ export default Ember.Route.extend({
     }
   }
 });
+
+export default LoginRoute;

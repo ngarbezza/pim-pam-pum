@@ -1,7 +1,7 @@
 import Ember from 'ember';
 import AuthenticatedRoute from './authenticated-route';
 
-export default Ember.Route.extend(AuthenticatedRoute, {
+var EventoDetalleRoute = Ember.Route.extend(AuthenticatedRoute, {
 
   model: function (params) {
     return this.store.findRecord('evento', params.id);
@@ -16,3 +16,5 @@ export default Ember.Route.extend(AuthenticatedRoute, {
     });
   }
 });
+
+export default EventoDetalleRoute;
