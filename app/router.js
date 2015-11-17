@@ -12,7 +12,7 @@ Router.map(function() {
   this.route('signup');
   this.route('logout');
   this.route('invitaciones');
-  this.route('query');
+  this.route('clima');
 
   this.route('invitacion-detalle', {path:'/eventos/:id_evento/invitacion'});
   this.route('evento-detalle', {path:'/eventos/:id/detalles'});
