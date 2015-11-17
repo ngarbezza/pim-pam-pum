@@ -11,6 +11,8 @@ export default Ember.Route.extend(AuthenticatedRoute, {
     var confirmadosPath = window.PimPamPum.hostName + '/api/eventos/' + model.get('id') + '/confirmados';
     Ember.$.get(confirmadosPath, function (response) {
       controller.set('confirmados', response.confirmados);
+    }, function () {
+      controller.set('confirmados', []);
     });
   }
 });
