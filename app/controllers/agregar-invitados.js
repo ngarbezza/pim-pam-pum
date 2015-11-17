@@ -11,7 +11,7 @@ export default Ember.Controller.extend({
   }.property('evento'),
 
   isInvalid: function () {
-    return this.get('invitadosAAgregar').length == 0;
+    return this.get('invitadosAAgregar').length === 0;
   }.property('invitadosAAgregar.[]'),
 
   actions: {
