@@ -3,31 +3,31 @@
   <h3>Mis eventos creados</h3>
 
   {{#if hayEventos}}
-    <table class="table table-hover ">
+  <table class="table">
 
-      <thead>
+    <thead>
+    <tr>
+      <th>Nombre Evento</th>
+      <th>Lugar</th>
+      <th>Descripción</th>
+      <th>Fecha</th>
+      <th></th>
+    </tr>
+    </thead>
+    <tbody>
+
+    {{#each model as |evento|}}
       <tr>
-        <th>Nombre Evento</th>
-        <th>Lugar</th>
-        <th>Descripción</th>
-        <th>Fecha</th>
-        <th></th>
+        <td>{{evento.id}} - {{evento.nombre}}</td>
+        <td>{{evento.direccion}}</td>
+        <td>{{evento.descripcion}}</td>
+        <td>{{evento.fechaFormateada}}</td>
+        <td>
+          <button class="btn btn-md boton-pim" {{action 'verDetalles' evento}}>Detalles</button>
+          <button class="btn btn-md boton-pim" {{action 'agregarInvitados' evento}}>Agregar invitados</button>
+        </td>
       </tr>
-      </thead>
-      <tbody>
-
-      {{#each model as |evento|}}
-        <tr>
-          <td>{{evento.id}} - {{evento.nombre}}</td>
-          <td>{{evento.direccion}}</td>
-          <td>{{evento.descripcion}}</td>
-          <td>{{evento.fechaFormateada}}</td>
-          <td>
-            <button {{action 'verDetalles' evento}}>Detalles</button>
-            <button {{action 'agregarInvitados' evento}}>Agregar invitados</button>
-          </td>
-        </tr>
-      {{/each}}
+    {{/each}}
 
       </tbody>
     </table>

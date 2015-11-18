@@ -3,7 +3,7 @@
   <h3>Invitaciones recibidas</h3>
 
   {{#if hayInvitaciones}}
-    <table class="table table-hover">
+    <table class="table">
 
       <thead>
       <tr>
@@ -20,23 +20,23 @@
           <td>{{invitacion.id_evento}} - {{invitacion.nombre_evento}}</td>
           <td>{{invitacion.fechaFormateada}}</td>
           <td>
-            <button {{action 'verDetalleInvitacion' invitacion}}>Ver más...</button>
+            <button class="btn btn-md boton-pum" {{action 'verDetalleInvitacion' invitacion}}>Ver más...</button>
           </td>
           <td>
             {{#if invitacion.sin_confirmar }}
-              <span class="label label-warning">Todavía no confirmaste!</span>
-              <button {{action 'aceptar' invitacion}}>Aceptar</button>
-              <button {{action 'rechazar' invitacion}}>Rechazar</button>
+              <span class="label label-warning status">Todavía no confirmaste!</span>
+              <button class="btn btn-md boton-pim" {{action 'aceptar' invitacion}}>Aceptar</button>
+              <button class="btn btn-md boton-pim" {{action 'rechazar' invitacion}}>Rechazar</button>
             {{/if}}
 
             {{#if invitacion.aceptada }}
-              <span class="label label-success">Aceptada</span>
-              <button {{action 'rechazar' invitacion}}>Rechazar</button>
+              <span class="label label-success status">Aceptada</span>
+              <button class="btn btn-md boton-pim" {{action 'rechazar' invitacion}}>Rechazar</button>
             {{/if}}
 
             {{#if invitacion.rechazada }}
-              <span class="label label-default">Rechazada</span>
-              <button {{action 'aceptar' invitacion}}>Aceptar</button>
+              <span class="label label-default status">Rechazada</span>
+              <button class="btn btn-md boton-pim" {{action 'aceptar' invitacion}}>Aceptar</button>
             {{/if}}
 
           </td>

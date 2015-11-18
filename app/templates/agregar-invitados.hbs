@@ -2,7 +2,7 @@
 
   <h3>Agregar invitados a "{{evento.nombre}}"</h3>
 
-  <div class="input-group">
+  <div class="input-group agregar-campo" >
     {{aupac-ember-data-typeahead
         class='form-control'
         params=sugerenciasParams
@@ -15,11 +15,11 @@
 
   <ul>
     {{#each invitadosAAgregar as |invitado|}}
-      <li>{{invitado.nombreUsuario}} - <a href="#" {{action 'eliminarElegido' invitado}}>quitar</a></li>
+      <li>{{invitado.nombreUsuario}} - <a href="#" {{action 'eliminarElegido' invitado}}><span class="glyphicon glyphicon-remove-circle cruz"></span></a></li>
     {{/each}}
   </ul>
 
-  <div class="input-group">
+  <div class="input-group botones-fila">
     <button class="btn btn-md boton-pim" {{action 'enviarInvitaciones'}} disabled={{isInvalid}}>Enviar Invitaciones</button>
     <button class="btn btn-md boton-pum" {{action 'cancelarInvitaciones'}}>Cancelar</button>
   </div>
