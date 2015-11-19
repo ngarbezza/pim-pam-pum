@@ -1,26 +1,27 @@
 <div class="container evento-detalle borde-redondeado">
 
-  <h3>{{model.nombre}}</h3>
+  <h3>{{evento.nombre}}</h3>
 
     <div class="row">
         <span> Dirección:</span>
 
-        <p>{{model.direccion}}</p>
+        <p>{{evento.direccion}}</p>
     </div>
 
-  {{#if model.descripcion }}
-      <div>
-          <span>Descripción: {{model.descripcion}}</span>
+  {{#if evento.descripcion }}
+      <div class="row">
+          <span>Descripción: </span>
+          <p>{{evento.descripcion}}</p>
       </div>
   {{/if}}
 
-
+{{#if evento.fechaFormateada }}
       <div class="row">
         <span> Fecha:</span>
 
-        <p>{{model.fechaFormateada}}</p>
+        <p>{{evento.fechaFormateada}}</p>
       </div>
-
+{{/if}}
 
 
 
@@ -40,5 +41,8 @@
   <p> No hay confirmados :(</p>
   {{/if}}
     </div>
+
+
+    <button class=" btn btn-md boton-pum margen-botton" {{action 'volver'}}>Volver</button>
 
 </div>
