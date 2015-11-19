@@ -2,7 +2,8 @@
 
   <h3>Mis eventos creados</h3>
 
-  <table class="table table-hover ">
+  {{#if hayEventos}}
+  <table class="table">
 
     <thead>
     <tr>
@@ -22,12 +23,19 @@
         <td>{{evento.descripcion}}</td>
         <td>{{evento.fechaFormateada}}</td>
         <td>
-          <button {{action 'verDetalles' evento}}>Detalles</button>
-          <button {{action 'agregarInvitados' evento}}>Agregar invitados</button>
+          <button class="btn btn-md boton-pim" {{action 'verDetalles' evento}}>Detalles</button>
+          <button class="btn btn-md boton-pim" {{action 'agregarInvitados' evento}}>Agregar invitados</button>
         </td>
       </tr>
     {{/each}}
 
       </tbody>
-  </table>
+    </table>
+
+  {{else}}
+
+    <p>No has creado ningún evento todavía. {{link-to 'Crear uno' 'nuevo-evento'}}</p>
+
+  {{/if}}
+
 </div>

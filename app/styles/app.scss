@@ -7,7 +7,7 @@
   border: 0px solid #000000;
 }
 
-div .evento{
+div.evento{
   /*background-image:  url("/app/styles/imagenes/download.jpg");*/
 
   border-color: #dcdcdc;
@@ -29,6 +29,40 @@ div .evento{
     padding-left: 10%;
     padding-top: 5%;
     padding: 5%;
+
+  }
+
+  span{
+
+    font-weight: bold;
+  }
+}
+
+span.status{
+  padding: 3%;
+}
+
+div.evento-detalle{
+  /*background-image:  url("/app/styles/imagenes/download.jpg");*/
+
+  border-color: #dcdcdc;
+  border: medium;
+  background-color: lightsalmon;
+
+  margin: auto;
+  width: 50%;
+
+
+
+  h3{
+    padding-left: 5%;
+    padding-top: 10px;
+    font-style: oblique;
+  }
+
+  .row{
+    padding-left: 8%;
+
 
   }
 
@@ -104,6 +138,16 @@ div .login{
   }
 }
 
+
+.agregar-campo{
+
+}
+
+div.botones-fila{
+  display: block;
+  padding-top: 5%;
+
+}
 div .clima{
 
   border-color:#dcdcdc;
@@ -225,21 +269,31 @@ div .principal{
 
 }
 
+span.cruz{
+  color: #d58512;
+}
 
-button ,boton-pim.boton-pim{
+button.boton-cruz{
+  background-color: #d58512;
+  color: white;
+  font-size: 15px;
+}
+button.boton-pim{
 
    background-color: forestgreen;
   color: #ffffff;
   margin-left: 10%;
-  margin-bottom: 5%;
 
+
+}
+.margen-botton{
+  margin-bottom: 5%;
 }
 
 button.boton-pum{
 
-  background-color: #F9AB24;
+  background-color: #d58512;
   color: #ffffff;
   margin-left: 10%;
-  margin-bottom: 5%;
-
 }
+

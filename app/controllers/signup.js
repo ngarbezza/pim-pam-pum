@@ -50,7 +50,15 @@ export default Ember.Controller.extend(EmberValidations, {
       });
 
       user.save().then(function () {
-        self.transitionToRoute('login');
+        var credentials = {
+          identification: self.get('userEmail'),
+          password: self.get('userPassword')
+        };
+        self.get('session').authenticate('authenticator:pimpampum', credentials).then(function () {
+          self.transitionToRoute('eventos');
+        }, function () {
+          self.transitionToRoute('login');
+        });
       }, function () {
         self.set('model', user);
       });

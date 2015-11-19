@@ -1,16 +1,18 @@
-
 {{render 'header-nav'}}
 
-<div class="container" class="principal" >
-    <h2 class="text-center">
+<div class="container" class="principal">
+  <h2 class="text-center">
 
-        <div>
-        <span class="titulo3">Pim </span><span class="titulo2">- Pam</span><span class="titulo1">- Pum</span>
-
-        </div>
-        <div><small class="subtitulo">¡¡Tu evento en tres pasos!!</small></div> </h2>
+    <div>
+      <span class="titulo3">Pim </span><span class="titulo2">- Pam</span><span class="titulo1">- Pum</span>
+    </div>
+    <div>
+      <small class="subtitulo">¡¡Tu evento en tres pasos!!</small>
+    </div>
+  </h2>
   <br>
   <br>
   <br>
   {{outlet}}
+  {{ember-notify messageStyle='bootstrap'}}
 </div>

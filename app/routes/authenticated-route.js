@@ -10,9 +10,10 @@ var AuthenticatedRoute = Ember.Mixin.create({
 
   actions: {
     error: function (err) {
-      // error handler global
-      console.log(err);
-      this.transitionTo('logout');
+      if (err && err.errors && err.errors[0] === 'Unauthorized Request') {
+        return this.transitionTo('logout');
+      }
+      return true;
     }
   }
 });

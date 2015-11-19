@@ -1,15 +1,24 @@
-<div class="container evento borde-redondeado">
+<div class="container evento-detalle borde-redondeado">
 
   <h3>{{model.nombre}}</h3>
 
-  <div class="row">
-    <span>Descripción: </span>{{model.descripcion}}
+    <div class="row">
+        <span>Dirección: </span><p>{{model.direccion}}</p>
+    </div>
+
+{{#if model.descripcion }}
+    <div class="row">
+    <span>Descripción: </span><p>{{model.descripcion}}</p>
   </div>
+{{/if}}
 
   <div class="row">
     <span> Fecha:</span>
 
     <p>{{model.fechaFormateada}}</p>
   </div>
+
+
+        <button class=" btn btn-md boton-pum margen-botton" {{action 'volver'}}>Volver</button>
 
 </div>

@@ -10,9 +10,7 @@ export default Ember.Controller.extend({
     return { id_evento: this.get('evento').get('id') };
   }.property('evento'),
 
-  isInvalid: function () {
-    return this.get('invitadosAAgregar').length == 0;
-  }.property('invitadosAAgregar.[]'),
+  isInvalid: Ember.computed.empty('invitadosAAgregar.[]'),
 
   actions: {
     invitadoElegido: function(item) {
@@ -36,11 +34,11 @@ export default Ember.Controller.extend({
         })
       };
       Ember.$.post(invitarPath, invitarParams).then(function () {
-        console.log('invitaciones enviadas correctamente');
+        self.get('notify').success('Invitaciones enviadas correctamente.');
         self.set('invitadosAAgregar', []);
         self.transitionToRoute('eventos');
       }, function (error) {
-        console.log('fallo el envío de invitaciones');
+        self.get('notify').warning('Ocurrió un error al enviar las invitaciones.');
         console.log(error);
       });
     },

@@ -14,15 +14,11 @@ export default TokenAuthenticator.extend({
 
   invalidate: function() {
     var self = this;
-    return new Ember.RSVP.Promise(function(resolve, reject) {
+    return new Ember.RSVP.Promise(function(resolve) {
       self.makeLogoutRequest().then(function(response) {
-        Ember.run(function() {
-          resolve(response);
-        });
+        Ember.run(function() { resolve(response); });
       }, function() {
-        Ember.run(function() {
-          resolve();
-        });
+        Ember.run(function() { resolve(); });
       });
     });
   },

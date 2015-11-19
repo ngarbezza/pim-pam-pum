@@ -1,15 +1,48 @@
-<div class="container evento borde-redondeado">
+<div class="container evento-detalle borde-redondeado">
 
-  <h3>{{model.nombre}}</h3>
+  <h3>{{evento.nombre}}</h3>
 
-  <div class="row">
-    <span>Descripción: </span>{{model.descripcion}}
-  </div>
+    <div class="row">
+        <span> Dirección:</span>
 
-  <div class="row">
-    <span> Fecha:</span>
+        <p>{{evento.direccion}}</p>
+    </div>
 
-    <p>{{model.fechaFormateada}}</p>
-  </div>
+  {{#if evento.descripcion }}
+      <div class="row">
+          <span>Descripción: </span>
+          <p>{{evento.descripcion}}</p>
+      </div>
+  {{/if}}
+
+{{#if fechaFormateada }}
+      <div class="row">
+        <span> Fecha:</span>
+
+        <p>{{fechaFormateada}}</p>
+      </div>
+{{/if}}
+
+
+
+
+
+
+    <div class="row">
+
+  <span>Confirmados:</span>
+  {{#if hayConfirmados }}
+    <ul>
+      {{#each confirmados as |invitado|}}
+        <li>{{invitado.nombreUsuario}}</li>
+      {{/each}}
+    </ul>
+  {{else}}
+  <p> No hay confirmados :(</p>
+  {{/if}}
+    </div>
+
+
+    <button class=" btn btn-md boton-pum margen-botton" {{action 'volver'}}>Volver</button>
 
 </div>
