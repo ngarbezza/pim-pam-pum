@@ -15,7 +15,7 @@
   "postinstall": "bower cache clean && bower install",
   "repository": "",
   "engines": {
-    "node": ">= 0.12.0"
+    "node": ">= 6.17.1"
   },
   "author": "",
   "license": "MIT",
